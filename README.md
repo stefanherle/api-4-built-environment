@@ -6,7 +6,7 @@
 [![python](https://img.shields.io/badge/Python-3.12.11-6DB121)](https://www.python.org/)
 [![ifcopenshell](https://img.shields.io/badge/Lib-IfcOpenShell%200.8.4-6DB121)](https://ifcopenshell.org/)
 
-<a href="./static/img/logo.png"><img src="./static/img/logo.png" alt="API4BE Logo" height="120"/></a>
+<a href="./api4be/static/img/logo.png"><img src="./api4be/static/img/logo.png" alt="API4BE Logo" height="120"/></a>
 
 ## Authors
 
