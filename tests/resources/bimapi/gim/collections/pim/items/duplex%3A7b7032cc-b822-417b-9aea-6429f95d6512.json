@@ -1,0 +1,365 @@
+{
+  "geometry": {
+    "coordinates": [
+      [
+        [
+          6.122195649982645,
+          49.62917521649864
+        ],
+        [
+          6.122185832375163,
+          49.629177408061224
+        ],
+        [
+          6.122185832375163,
+          49.629177408061224
+        ],
+        [
+          6.122061057052423,
+          49.629205261288064
+        ],
+        [
+          6.122060944589579,
+          49.62920504871595
+        ],
+        [
+          6.122042592185451,
+          49.629209145454894
+        ],
+        [
+          6.122042704648223,
+          49.62920935802705
+        ],
+        [
+          6.122036107206875,
+          49.62921083074846
+        ],
+        [
+          6.12203798308565,
+          49.62921437645181
+        ],
+        [
+          6.12203798308565,
+          49.62921437645181
+        ],
+        [
+          6.12203798308565,
+          49.62921437645181
+        ],
+        [
+          6.12203798308565,
+          49.62921437645181
+        ],
+        [
+          6.12203798308565,
+          49.62921437645181
+        ],
+        [
+          6.122036107206875,
+          49.62921083074846
+        ],
+        [
+          6.122030648609268,
+          49.62921204924982
+        ],
+        [
+          6.122042160160442,
+          49.62923380787225
+        ],
+        [
+          6.122041832906251,
+          49.62923388092392
+        ],
+        [
+          6.122042017483999,
+          49.629234229804425
+        ],
+        [
+          6.121984974000207,
+          49.62924696337931
+        ],
+        [
+          6.122011065351755,
+          49.62929628012483
+        ],
+        [
+          6.122068436140837,
+          49.62928347348545
+        ],
+        [
+          6.122046501226306,
+          49.62924201315667
+        ],
+        [
+          6.122046501226306,
+          49.62924201315667
+        ],
+        [
+          6.122070235549857,
+          49.62928687463921
+        ],
+        [
+          6.122075694154839,
+          49.62928565613599
+        ],
+        [
+          6.122073818270591,
+          49.629282110433294
+        ],
+        [
+          6.122073818270591,
+          49.629282110433294
+        ],
+        [
+          6.122073818270591,
+          49.629282110433294
+        ],
+        [
+          6.122073818270591,
+          49.629282110433294
+        ],
+        [
+          6.122075694154839,
+          49.62928565613599
+        ],
+        [
+          6.122272832080449,
+          49.629241649588025
+        ],
+        [
+          6.1222729445442985,
+          49.629241862159944
+        ],
+        [
+          6.1222912969414285,
+          49.6292377653845
+        ],
+        [
+          6.1222911844775085,
+          49.6292375528126
+        ],
+        [
+          6.1223032405084234,
+          49.629234861562686
+        ],
+        [
+          6.122301364609604,
+          49.629231315863635
+        ],
+        [
+          6.122295906016317,
+          49.62923253437753
+        ],
+        [
+          6.122295906016317,
+          49.62923253437753
+        ],
+        [
+          6.122295906016317,
+          49.62923253437753
+        ],
+        [
+          6.122295906016317,
+          49.62923253437753
+        ],
+        [
+          6.122301364609604,
+          49.629231315863635
+        ],
+        [
+          6.122291728701983,
+          49.62921310270402
+        ],
+        [
+          6.122292055955661,
+          49.629213029651645
+        ],
+        [
+          6.12229187151492,
+          49.629212681033735
+        ],
+        [
+          6.122348914878776,
+          49.6291999473075
+        ],
+        [
+          6.122322823237487,
+          49.62915063063721
+        ],
+        [
+          6.122265452671049,
+          49.62916343740301
+        ],
+        [
+          6.122263653252976,
+          49.62916003625222
+        ],
+        [
+          6.122258194666715,
+          49.629161254764334
+        ],
+        [
+          6.122258194666715,
+          49.629161254764334
+        ],
+        [
+          6.122195649982645,
+          49.62917521649864
+        ],
+        [
+          6.122195649982645,
+          49.62917521649864
+        ]
+      ]
+    ],
+    "type": "Polygon"
+  },
+  "properties": {
+    "features@gim.navigationLink": [
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d7df1",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d7d12",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d7d42",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d7af9",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d7be7",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d7938",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d795d",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d46ec",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d46d1",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d471d",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d44b8",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d441c",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d410f",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d49bd",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d574f",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:9808fd7f-dc48-478e-9217-628e833d5239",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdb1c2",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdb2de",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdb41a",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdb448",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdb57b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdb6d5",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdc223",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6b61ce71-1a7a-473c-8f87-4262e0bdc24f",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:7252d52a-2593-43a5-906c-4ba855ac3bd4",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:6adf5714-15ac-4de3-b37a-f2a9c038d418",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:c4d1e3d0-b53f-4f53-a7e0-ce1a029dd677",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:3ab8ee1d-07ad-41b9-8f24-a55884e7e655",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:3ab8ee1d-07ad-41b9-8f24-a55884e7e651",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7ef5",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7ca4",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7b5b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7b78",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7a99",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7a31",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:7606d7eb-508f-40ce-a522-9b526ddc7201",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:7606d7eb-508f-40ce-a522-9b526ddc728b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:e586c31c-dfb6-463e-aee7-a2dffc985748",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:e586c31c-dfb6-463e-aee7-a2dffc985003",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:e586c31c-dfb6-463e-aee7-a2dffc98500b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:e586c31c-dfb6-463e-aee7-a2dffc98501e",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:e586c31c-dfb6-463e-aee7-a2dffc985031",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d8c1",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412df9e",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412dcef",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d365",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d386",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:d45937bc-7a82-4da5-a08f-60c9c58f2b17",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:0153d284-719c-4549-860d-e953a515b5e2",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:c73fc240-b9c3-4267-9e6c-b3df161ce52f",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:81be7c96-ce56-447e-9d93-021422f83119",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:81be7c96-ce56-447e-9d93-021422f830c5",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:64b7f7d3-8cfc-4277-ba33-8de2e6533a28",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:64b7f7d3-8cfc-4277-ba33-8de2e6533ae9",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:98d604b7-4c6f-4ae8-b5f3-0187bb53ebc8",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:98d604b7-4c6f-4ae8-b5f3-0187bb53f220",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:98d604b7-4c6f-4ae8-b5f3-0187bb53f379",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:98d604b7-4c6f-4ae8-b5f3-0187bb53f378",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:4c8d2570-3244-4e75-8237-a4372a40e82b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:4c8d2570-3244-4e75-8237-a4372a40e878",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b763c",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b763f",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b763e",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7639",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b7638",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d33",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d32",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d3d",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d3c",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d3f",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d3e",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d38",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d3b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d3a",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d45",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d44",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d1fa",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d616",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d693",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d74b",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:aa6e13ea-b5bc-4245-93bf-8b2355840e59",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:0b74b3fa-1a92-405e-9ac9-d59067be1d75",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b6af6",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b6987",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b6925",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b6962",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b77da",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:3ab8ee1d-07ad-41b9-8f24-a55884e7c598",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:3ab8ee1d-07ad-41b9-8f24-a55884e7c631",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b941a",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9448",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9208",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b90eb",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9e33",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9e32",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9d82",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9db0",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:982f59b0-f2e1-485f-8ce1-c9f6117b9dca",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d4ca",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d518",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412d5af",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:2c391822-07f8-4a22-86a8-a1e57412ca31",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:0b74b3fa-1a92-405e-9ac9-d59067bfe0d9",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:0b74b3fa-1a92-405e-9ac9-d59067bfe0da",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:40c2d70d-8d3b-49a9-9702-6756a4ee40fd",
+      "http://localhost/bimapi/gim/collections/pim/items/duplex:40c2d70d-8d3b-49a9-9702-6756a4ee4132"
+    ],
+    "geometry@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-6429f95d6512/geometry",
+    "globalId": "7b7032cc-b822-417b-9aea-6429f95d6512",
+    "ifcitem@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-6429f95d6512",
+    "materials": {},
+    "project@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex",
+    "psets": {
+      "PSet_Revit_Constraints": {
+        "Elevation": 0.0,
+        "id": 30129
+      },
+      "PSet_Revit_Identity Data": {
+        "Name": "Level 1",
+        "id": 30132
+      },
+      "PSet_Revit_Other": {
+        "Category Code": "Floor",
+        "id": 30126
+      },
+      "PSet_Revit_Type_Constraints": {
+        "Elevation Base": 0,
+        "id": 29711
+      },
+      "PSet_Revit_Type_Dimensions": {
+        "Automatic Room Computation Height": true,
+        "id": 29708
+      },
+      "PSet_Revit_Type_Graphics": {
+        "Color": 0,
+        "Line Pattern": "Centre",
+        "Line Weight": 1,
+        "Symbol": "M_Level Head - Circle",
+        "Symbol at End 1 Default": false,
+        "Symbol at End 2 Default": true,
+        "id": 29714
+      }
+    },
+    "type": "IfcBuildingStorey"
+  },
+  "type": "Feature"
+}

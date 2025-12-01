@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}
+API4BE
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+{% endblock %}
+
+{% block formats %}
+<ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="">HTML <span class="sr-only">(current)</span></a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block dataview %}
+<script type="text/javascript">
+
+</script>
+{% endblock %}
+
+
+{% block view %}
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<div class="container justify-content-center align-items-center mt-4">
+    <h2>API4BE - Demo Server</h2>
+    <h4>Background & Features</h4>
+    <p> The API4BE server implements a hypermedia-driven RESTful API for
+        digital twins of the built environment. It consists of three APIs for the domains of Building Information Modeling (BIM), Geospatial Information Modeling (GIM) and the Internet of Things (IoT). While the GIS and IoT interfaces
+        are covered by established standards, a RESTful interface for IFC models of the BIM domain is defined and implemented. The APIs are interconnected with a federated approach though hypermedia navigation links.</p>
+    <p> The server offers the following features:</p>
+
+    <ul>
+        <li>Exposing IFC models and their items by a hypermedia-driven RESTful
+            API using objects in JSON format (e.g., ifcJSON, glTF).</li>
+        <li>Interacting with and altering IFC models and their items using HTTP
+            verbs (e.g., POST, DELETE).* </li>
+        <li> Novel methods for the generation and provisioning of GIM layers from
+            georeferenced IFC files through endpoints based on the OGC API -
+            Features.* </li>
+        <li>Modeling sensors in IFC and introducing a linked model approach to
+            their observations (time series and real-time data in the SensorThings
+            API (STA))*</li>
+    </ul>
+
+     <p>* These features are not fully included or completely ommitted in the open source server. </p>
+
+    <h4>Disclaimer</h4>
+    <p>The <a href="https://doi.org/10.1016/j.autcon.2024.105551">scientific paper</a> describing the concept was published in the <a href="https://www.sciencedirect.com/journal/automation-in-construction">Automation in Construction</a> journal in 2024. Please cite the paper in the following was:</p>
+    <div class="card">
+        <div class="card-body">
+            Herlé, S & Blankenbach, J. (2024): Hypermedia-driven RESTful API for Digital Twins of the Built Environment. <i>Automation in Construction.</i> Vol. 165, No. 105551,<a href="https://doi.org/10.1016/j.autcon.2024.105551">https://doi.org/10.1016/j.autcon.2024.105551</a>.
+        </div>
+    </div>
+
+    <hr/>
+    <h4>Examples</h4>
+    <p>The demo server offers a data set and use cases which are described in the paper. It is used to implement and evaluate the capabilities of the server:</p>
+    The georeferenced duplex model is a planning model of a duplex apartment building in Luxembourg (<a href="https://github.com/stijngoedertier/georeference-ifc">here</a>). The use case describes the publication of a building during its planning phase. The entire or single parts of the building are exposed as resources through HTTP endpoints for the BIM and the GIM domain.</li>
+
+
+    <div id="accordion" class="mb-4">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        GIM Endpoints for the duplex planning model (examples).
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <table id="table1" class="table table-bordered table-hover">
+                        <thead class="">
+                        <tr>
+                            <th data-field="key"><div class="th-inner ">Title</div><div class="fht-cell"></div></th>
+                            <th data-field="value"><div class="th-inner ">Description</div><div class="fht-cell"></div></th>
+                            <th data-field="value"><div class="th-inner ">URL</div><div class="fht-cell"></div></th>
+                            <th data-field="options"><div class="th-inner ">Links</div><div class="fht-cell"></div></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Collections</td>
+                            <td>Endpoint offers the GIM collections.</td>
+                            <td>{{api_address}}/gim/collections</td>
+                            <td><a href="{{api_address}}/gim/collections">JSON</a> <a href="{{api_address}}/gim/collections?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Items in GIM collection</td>
+                            <td>The models of the collection "pim" are returned as GeoJSON.</td>
+                            <td>{{api_address}}/gim/collections/pim/items</td>
+                            <td><a href="{{api_address}}/gim/collections/pim/items">JSON</a> <a href="{{api_address}}/gim/collections/pim/items?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>GIM duplex model</td>
+                            <td>The model with name "duplex" is returned as GeoJSON.</td>
+                            <td>{{api_address}}/gim/collections/pim/items/duplex</td>
+                            <td><a href="{{api_address}}/gim/collections/pim/items/duplex">JSON</a> <a href="{{api_address}}/gim/collections/pim/items/duplex?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Ground storey of duplex model</td>
+                            <td>The ground storey of the duplex model is returned as GeoJSON. The "composed" parameter resolves the individual elements so that a FeatureCollection is returned.</td>
+                            <td>{{api_address}}/gim/collections/pim/items/duplex:7b7032cc-b822-417b-9aea-6429f95d6512?composed=false</td>
+                            <td><a href="{{api_address}}/gim/collections/pim/items/duplex:7b7032cc-b822-417b-9aea-6429f95d6512?composed=false">JSON</a> <a href="{{api_address}}/gim/collections/pim/items/duplex:7b7032cc-b822-417b-9aea-6429f95d6512?composed=false&format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>First storey of duplex model</td>
+                            <td>The first storey of the duplex model is returned as GeoJSON. The "composed" parameter resolves the individual elements so that a FeatureCollection is returned.</td>
+                            <td>{{api_address}}/gim/collections/pim/items/duplex:7b7032cc-b822-417b-9aea-6429f95d6693?composed=false</td>
+                            <td><a href="{{api_address}}/gim/collections/pim/items/duplex:7b7032cc-b822-417b-9aea-6429f95d6693?composed=false">JSON</a> <a href="{{api_address}}/gim/collections/pim/items/duplex:7b7032cc-b822-417b-9aea-6429f95d6693?composed=false&format=text/html">HTML</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        BIM Endpoints for the duplex planning model (examples).
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <table id="table2" class="table table-bordered table-hover">
+                        <thead class="">
+                        <tr>
+                            <th data-field="key"><div class="th-inner ">Title</div><div class="fht-cell"></div></th>
+                            <th data-field="value"><div class="th-inner ">Description</div><div class="fht-cell"></div></th>
+                            <th data-field="value"><div class="th-inner ">URL</div><div class="fht-cell"></div></th>
+                            <th data-field="options"><div class="th-inner ">Links</div><div class="fht-cell"></div></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>BIM duplex model (general)</td>
+                            <td>This endpoint returns links associated with the BIM model of duplex.</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>BIM duplex model (ifcJSON)</td>
+                            <td>The duplex model is returned as an ifcJSON.</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex?format=ifcjson</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex?format=ifcjson">JSON</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Spatial tree of duplex</td>
+                            <td>The spatial tree of duplex is returned.</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex/tree</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex/tree">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex/tree?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>IfcSite of duplex</td>
+                            <td>The ifcJSON for the IfcSite item is returned. With the format parameter set to "text/html", an overview is returned including property sets and a geometry viewer.</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-642906a29bd7</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-642906a29bd7">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-642906a29bd7?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Ground storey of duplex model</td>
+                            <td>The ground storey of the duplex model is returned as either ifcJSON or as an overview including geometry and property sets (html).</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-6429f95d6512</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-6429f95d6512">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-6429f95d6512?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Single IfcWall of the duplex model</td>
+                            <td>Individual wall of the duplex model is returned as either ifcJSON or as an overview including geometry and property sets (html).</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Property sets of the IfcWall</td>
+                            <td>Property Sets of the individual wall are returned.</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1/psets</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1/psets">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1/psets?format=text/html">HTML</a></td>
+                        </tr>
+                        <tr class=" treegrid-10" data-index="0">
+                            <td><span class="treegrid-expander"></span>Geometry of the IfcWall</td>
+                            <td>Geometry of the individual wall is returned, either as glTF or in a viewer (html).</td>
+                            <td>{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1/geometry</td>
+                            <td><a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1/geometry">JSON</a> <a href="{{api_address}}/bim/collections/pim/projects/duplex/ifcitems/9808fd7f-dc48-478e-9217-628e833d7df1/geometry?format=text/html">HTML</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

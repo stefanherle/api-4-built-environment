@@ -1,0 +1,31 @@
+{
+  "PSet_Revit_Type_Dimensions": {
+    "Automatic Room Computation Height": true,
+    "id": 29708
+  },
+  "PSet_Revit_Type_Constraints": {
+    "Elevation Base": 0,
+    "id": 29711
+  },
+  "PSet_Revit_Type_Graphics": {
+    "Line Weight": 1,
+    "Color": 0,
+    "Line Pattern": "Centre",
+    "Symbol": "M_Level Head - Circle",
+    "Symbol at End 1 Default": false,
+    "Symbol at End 2 Default": true,
+    "id": 29714
+  },
+  "PSet_Revit_Other": {
+    "Category Code": "Floor",
+    "id": 30126
+  },
+  "PSet_Revit_Constraints": {
+    "Elevation": 0.0,
+    "id": 30129
+  },
+  "PSet_Revit_Identity Data": {
+    "Name": "Level 1",
+    "id": 30132
+  }
+}

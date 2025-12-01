@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{project_name}} - {{guid}}
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+  <style>
+    #threejscanvas {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block formats %}
+<ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="#">HTML <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{guid}}">JSON</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block dataview %}
+
+{% endblock %}
+
+
+{% block view %}
+<div class="col-6">
+    <canvas id="threejscanvas"></canvas>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{ url_for('static', filename='js/threejs/0.139.2/three.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/threejs/0.139.2/OrbitControls.js') }}"></script>
+<script src="{{ url_for('static', filename='js/threejs/0.139.2/GLTFLoader.js') }}"></script>
+
+<script type="text/javascript">
+
+    window.addEventListener(`DOMContentLoaded`, () => {
+
+        // Geometry
+        const myCanvas = document.querySelector('#threejscanvas');
+        const axes = new THREE.AxesHelper();
+        const scene = new THREE.Scene();
+        scene.add(axes);
+
+        var light = new THREE.AmbientLight(0xffffff, 0.8);
+        var light2 = new THREE.PointLight(0xffffff, 0.5);
+        scene.add(light);
+        scene.add(light2);
+
+        var gridXZ = new THREE.GridHelper(10, 10);
+        scene.add(gridXZ);
+
+        const camera = new THREE.PerspectiveCamera(
+          50,
+          myCanvas.offsetWidth / myCanvas.offsetHeight
+        );
+        camera.position.set(100, 100, 100);
+        camera.lookAt(scene.position);
+
+        const renderer = new THREE.WebGLRenderer({
+          antialias: true,
+          canvas: myCanvas,
+        });
+        renderer.setClearColor(0xffffff, 1.0);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(myCanvas.offsetWidth, myCanvas.offsetHeight);
+
+        const orbitControls = new THREE.OrbitControls(
+          camera,
+          renderer.domElement
+        );
+        orbitControls.maxPolarAngle = Math.PI * 0.5;
+        orbitControls.minDistance = 0.1;
+        orbitControls.maxDistance = 100;
+        //orbitControls.autoRotate = true;
+        //orbitControls.autoRotateSpeed = 1.0;
+
+        renderer.setAnimationLoop(() => {
+          orbitControls.update();
+          renderer.render(scene, camera);
+        });
+
+        const gltfLoader = new THREE.GLTFLoader();
+        const geom_url = "{{url | safe}}/geometry";
+
+        async function fetchDataAsJson(name, url) {
+          const response = await fetch(url);
+          const data = await response.json();
+          initJsonTable(name, data);
+          return 1;
+        }
+
+        fetchDataAsJson("PSets", "{{url}}/psets");
+        fetchDataAsJson("IfcJson", "{{url}}");
+
+        async function addGeometries(url) {
+          const response = await fetch(url);
+          const geometry = await response.text();
+          if (geometry.startsWith("[")) {
+            geom_array = JSON.parse(geometry);
+            for (let i = 0; i < geom_array.length; i++) {
+                try {
+                    gltfLoader.load(geom_array[i], (gltf) => {
+                      scene.add(gltf.scene);
+                    });
+                } catch (error) {
+                    console.log(geom_array[i])
+                    console.error(error);
+                }
+            }
+          } else {
+            gltfLoader.parse(geometry, "", (gltf) => {
+              scene.add(gltf.scene);
+            });
+          }
+          return 1
+        }
+        addGeometries(geom_url);
+
+
+
+
+
+
+
+    });
+
+
+</script>
+{% endblock %}

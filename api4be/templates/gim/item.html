@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{name}}
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/ol.css') }}"
+    type="text/css">
+  <style>
+    .map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block formats %}
+<ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="">HTML <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{geojson_url | safe}}">JSON</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block dataview %}
+
+{% endblock %}
+
+
+{% block view %}
+<div class="col-6">
+    <div id="map" class="map"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{ url_for('static', filename='js/ol/8.2.0/ol.js') }}"></script>
+
+<script type="text/javascript">
+
+    var view = new ol.View({
+      center: ol.proj.fromLonLat([9.481544, 51.312801]),
+      zoom: 7
+    })
+
+    var base_layer = new ol.layer.Tile({
+      source: new ol.source.OSM()
+    })
+
+    var map = new ol.Map({
+      layers: [base_layer],
+      target: 'map',
+      view: view
+    })
+
+    var vectorSource = new ol.source.Vector({
+      format: new ol.format.GeoJSON(),
+      url: "{{geojson_url | safe}}"
+    });
+    var test = new ol.layer.Vector({
+      source: vectorSource,
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: 'rgba(0, 0, 255, 1.0)',
+          width: 3
+        })
+      })
+    })
+    map.addLayer(test);
+
+    vectorSource.on('featuresloadend', (vectorSourceEvent) => {
+        view.fit(vectorSource.getExtent(), map.getSize());
+        view.setZoom(view.getZoom()-2);
+        for (idx in vectorSourceEvent.features) {
+            let properties = vectorSourceEvent.features[idx].getProperties();
+            let dataToRender = JSON.parse(JSON.stringify(properties));
+            delete dataToRender["geometry"];
+            initJsonTable("Properties " + (("name" in dataToRender) ? dataToRender["name"] : "Feature " + idx), dataToRender);
+        }
+    })
+
+  </script>
+{% endblock %}

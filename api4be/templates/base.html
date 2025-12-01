@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-table.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.treegrid.css') }}" type="text/css">
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img height="50px" src="{{ url_for('static', filename='img/logo.png') }}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+	    </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            {% block formats %}
+            {% endblock %}
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+              {% block dataview %}
+              {% endblock %}
+              <div id="tableviews"></div>
+
+          </div>
+
+              {% block view %}
+              {% endblock %}
+          </div>
+        </div>
+    </div>
+
+
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='js/jquery/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper/1.14.7/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery/jquery.treegrid.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap-table.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap-table-treegrid.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+
+    <script>
+
+        var tablenumber = 1;
+        function initJsonTable(heading, data) {
+            let tableid = "table" + tablenumber;
+            let divtableid = "div" + tableid;
+            tablenumber +=1;
+            $('#tableviews').append("<div id=\"" + divtableid + "\"  class=\"mt-4\"></div>")
+            $('#' + divtableid).append("<h4>"+heading+"</h4>")
+            $('#' + divtableid).append("<table id=\"" + tableid + "\"></table>")
+
+            var $table = $('#' + tableid);
+            function prepareJSON(input) {
+
+                let prepdata = [];
+
+                function addOptions(key, value) {
+                    if (key != undefined && key.endsWith("navigationLink") && value.startsWith("http")) {
+                        return "<a href=\"" + value + "\">JSON</a>" + " <a href=\"" + value + "?format=text/html\">HTML</a>";
+                    } else {
+                        return "";
+                    }
+                }
+
+                function handleObjectOrArray(oa, pid, pkey, parray) {
+                    let id = 0;
+                    if (pid == 0) {
+                        id = 10;
+                    } else {
+                        id = pid*10
+                    }
+                    for (const key in oa) {
+                        let value =  (Array.isArray(oa[key])) ? "[Array " + oa[key].length + "]" : oa[key]
+                        // Cut array at pos 9
+                        if (parray && id%10 == 9) {
+                            value = "... (omitted for performance reasons, get JSON instead)"
+                        }
+
+
+                        prepdata.push({
+                            "id": id,
+                            "pid": pid,
+                            "key": key,
+                            "value": value,
+                            "options": (Array.isArray(oa[key])) ? "" : ((parray) ? addOptions(pkey, oa[key]) : addOptions(key, oa[key]))
+                        });
+                        if (Array.isArray(oa[key]) || (typeof oa[key] === 'object') ) {
+                            handleObjectOrArray(oa[key], id, key, Array.isArray(oa[key]));
+                        }
+                        if (parray && id%10 == 9) {
+                            break;
+                        }
+                        id += 1;
+                    }
+                }
+
+                handleObjectOrArray(input, 0, undefined, Array.isArray(input))
+                return prepdata
+            }
+
+            let prepdata = prepareJSON(data);
+
+            $(function() {
+                $table.bootstrapTable({
+                    data: prepdata,
+                    idField: 'id',
+                    columns: [
+                        {
+                          field: 'key',
+                          title: 'Key'
+                        },
+                        {
+                          field: 'value',
+                          title: 'Value',
+                        },
+                        {
+                          field: 'options',
+                          title: 'Options'
+                        }
+                      ],
+                    treeShowField: 'key',
+                    parentIdField: 'pid',
+                    onPostBody: function() {
+                        var columns = $table.bootstrapTable('getOptions').columns
+
+                        if (columns && columns[0][0].visible) {
+                            $table.treegrid({
+                                treeColumn: 0,
+                                initialState: 'collapsed',
+                                onChange: function() {
+                                    $table.bootstrapTable('resetView')
+                                }
+                            });
+                        }
+                    }
+                });
+            })
+        }
+    </script>
+
+    {% endblock %}
+</body>
+</html>

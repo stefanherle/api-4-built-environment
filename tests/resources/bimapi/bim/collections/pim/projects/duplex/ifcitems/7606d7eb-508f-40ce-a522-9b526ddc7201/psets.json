@@ -1,0 +1,102 @@
+{
+  "M_Single-Glass 1:0813 x 2420mm:0813 x 2420mm:171853": {
+    "id": 29741
+  },
+  "PSet_Revit_Type_Other": {
+    "AccessibilityPerformance": "AccessibilityPerformance",
+    "CodePerformance": "CodePerformance",
+    "IsFireExit": "IsFireExit",
+    "ConstructionType": "ConstructionType",
+    "GlazingAreaFraction": "GlazingAreaFraction",
+    "OperationType": "OperationType",
+    "Area": "Area",
+    "Color": "Color",
+    "Constituents": "Constituents",
+    "Features": "Features",
+    "Finish": "Finish",
+    "Grade": "Grade",
+    "Material": "Material",
+    "ModelReference": "ModelReference",
+    "NominalHeight": "NominalHeight",
+    "NominalLength": "NominalLength",
+    "NominalWidth": "NominalWidth",
+    "ProductionYear": "ProductionYear",
+    "Reference": "Reference",
+    "Shape": "Shape",
+    "Size": "Size",
+    "SustainabilityPerformance": "SustainabilityPerformance",
+    "WarrantyDescription": "WarrantyDescription",
+    "WarrantyDurationLabor": "WarrantyDurationLabor",
+    "WarrantyDurationParts": "WarrantyDurationParts",
+    "WarrantyGuarantorLabor": "WarrantyGuarantorLabor",
+    "WarrantyGuarantorParts": "WarrantyGuarantorParts",
+    "ExpectedLife": "ExpectedLife",
+    "ReplacementCost": "ReplacementCost",
+    "AssetAccountingType": "FIXED",
+    "ModelLabel": "ModelLabel",
+    "id": 27467
+  },
+  "PSet_Revit_Type_Identity Data": {
+    "Manufacturer": "Manufacturer",
+    "Assembly Description": "",
+    "Assembly Code": "",
+    "Type Mark": "56",
+    "Fire Rating": "Fire Rating",
+    "OmniClass Number": "23.30.10.00",
+    "OmniClass Title": "Doors",
+    "id": 27500
+  },
+  "PSet_Revit_Type_Materials and Finishes": {
+    "Door Material": "Door - Panel",
+    "Frame Material": "Door - Frame",
+    "id": 27509
+  },
+  "PSet_Revit_Type_Construction": {
+    "Function": 1,
+    "Wall Closure": 0,
+    "Construction Type": "Construction Type",
+    "id": 27513
+  },
+  "PSet_Revit_Type_Dimensions": {
+    "Thickness": 0.051,
+    "Height": 2.42,
+    "Rail Width - Base": 0.102,
+    "Rail Width - Top": 0.102,
+    "Stile Width - Hinge": 0.102,
+    "Stile Width - Latch": 0.102,
+    "Trim Projection Ext": 0.025,
+    "Trim Projection Int": 0.025,
+    "Trim Width": 0.076,
+    "Width": 0.813,
+    "id": 27518
+  },
+  "PSet_Revit_Phasing": {
+    "Phase Created": "New Construction",
+    "id": 33211
+  },
+  "PSet_Revit_Identity Data": {
+    "Mark": "B102",
+    "id": 33214
+  },
+  "PSet_Revit_Other": {
+    "Head Height": 2.42,
+    "InstallationDate": "InstallationDate",
+    "SerialNumber": "SerialNumber",
+    "WarrantyStartDate": "WarrantyStartDate",
+    "BarCode": "BarCode",
+    "AssetIdentifier": "AssetIdentifier",
+    "TagNumber": "TagNumber",
+    "id": 33217
+  },
+  "PSet_Revit_Constraints": {
+    "Level": "Level 1",
+    "Sill Height": 0.0,
+    "id": 33226
+  },
+  "Pset_DoorCommon": {
+    "Reference": "M_Single-Glass 1:0813 x 2420mm",
+    "IsExternal": true,
+    "FireRating": "Fire Rating",
+    "id": 33229
+  }
+}

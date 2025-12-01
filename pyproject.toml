@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "api4be"
+version = "0.1.0"
+description = "Hypermedia-driven RESTful API for Digital Twins of the Built Environment."
+authors = [
+    { name="Stefan Herlé"}
+]
+dependencies = [
+    "Flask==3.1.0",
+    "Flask_Caching==2.3.0",
+    "Flask_Cors==5.0.0",
+    "furl==2.1.3",
+    "ifcopenshell==0.8.4",
+    "numpy==2.2.2",
+    "pandas==2.2.3",
+    "pygltflib==1.16.3",
+    "pyproj==3.6.1",
+    "pytest==9.0.1",
+    "python-dotenv==1.0.1",
+    "Shapely==2.0.7"
+]
+requires-python = ">=3.12"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["api4be"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

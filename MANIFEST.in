@@ -1,0 +1,4 @@
+include api4be/config.py
+recursive-include api4be/templates *
+recursive-include api4be/static *
+recursive-include api4be/data *

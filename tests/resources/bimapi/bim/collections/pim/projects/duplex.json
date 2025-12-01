@@ -1,0 +1,12 @@
+{
+  "id": "duplex",
+  "name": "duplex",
+  "title": "0001",
+  "collection@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim",
+  "project@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex",
+  "ifcproject@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex/ifcitems/7b7032cc-b822-417b-9aea-642906a29bd5",
+  "tree@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex/tree",
+  "georef@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex/georef",
+  "geometry@bim.navigationLink": "http://localhost/bimapi/bim/collections/pim/projects/duplex/geometry",
+  "project@gim.navigationLink": "http://localhost/bimapi/gim/collections/pim/items/duplex"
+}
