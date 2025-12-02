@@ -14,6 +14,7 @@
 # along with this program.  If not, see {@literal<http://www.gnu.org/licenses/>}.
 
 from urllib.parse import urljoin
+from urllib.parse import urlparse, urlunparse
 
 from api4be import config
 
