@@ -71,9 +71,9 @@ def get_gltf_of_ifc_element(element, params):
         alpha_mode = pygltflib.OPAQUE
 
         if material['diffuse'] is not None:
-            base_color[0] = material['diffuse'].r()
-            base_color[1] = material['diffuse'].g()
-            base_color[2] = material['diffuse'].b()
+            base_color[0] = material['diffuse'][0]
+            base_color[1] = material['diffuse'][1]
+            base_color[2] = material['diffuse'][2]
         if material['transparency'] is not None:
             base_color[3] = base_color[3] - material['transparency']
             if material['transparency'] > 1.e-9:

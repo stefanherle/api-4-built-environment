@@ -71,7 +71,7 @@ def get_shape_of_ifc_element(element):
 
         # Each style may have diffuse colour RGB codes
         if style.diffuse:
-            material['diffuse'] = style.diffuse
+            material['diffuse'] = [style.diffuse.r(), style.diffuse.g(), style.diffuse.b()]
         else:
             material['diffuse'] = None
 
