@@ -24,6 +24,7 @@ from api4be.components.serializer import bim_deserializer, gim_serializer
 from api4be.components.utils.georef_utils import check_georef_options
 from api4be.components.models.spatial_tree import IfcSpatialTree
 from api4be.components.utils.guid_utils import get_guids
+from api4be import config
 
 ifc_file_repository = None
 
@@ -99,7 +100,7 @@ class IfcFileRepository(object):
         # generate geojson if not exists
         geojson_path = os.path.join(collection_path, project_name + '.json')
         if not os.path.exists(geojson_path):
-            geojson = gim_serializer.geojson_geometry_of_composed_element(model, ifc_project, gtype='footprint', georef=georef_params)
+            geojson = gim_serializer.geojson_geometry_of_composed_element(model, ifc_project, gtype=config.DEFAULT_FOOTPRINT_TYPE, georef=georef_params)
 
             with open(geojson_path, 'w') as fp:
                 json.dump(geojson, fp)

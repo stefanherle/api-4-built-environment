@@ -93,7 +93,7 @@ def get_gim_request_query_parameters(request, collection_name=None, project_name
         # Query parameters for geojson serialization
         'REFS': request.args.get('refs', default=False, type=_is_it_true),
         'COMPOSED': request.args.get('composed', default=True, type=_is_it_true),
-        'GTYPE': request.args.get('gtype', default='bbox', type=str),
+        'GTYPE': request.args.get('gtype', default=config.DEFAULT_FOOTPRINT_TYPE, type=str),
 
         # Query parameter for format
         'FORMAT': request.args.get('format', default='application/geo+json', type=str),

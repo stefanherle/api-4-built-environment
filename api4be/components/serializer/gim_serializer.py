@@ -16,16 +16,16 @@
 import json
 import logging
 
-import ifcopenshell
 import shapely
 
 from api4be.components.cache import cache
 from api4be.components.serializer import bim_serializer
 from api4be.components.utils import geom_utils, spatial_tree_utils
-from api4be.components.utils.geom_utils import get_2d_bbox_of_ifc_element, get_2d_footprint_of_ifc_element, \
-    _get_2d_footprint_of_shape
+from api4be.components.utils.geom_utils import get_2d_bbox_of_ifc_element, get_2d_footprint_of_ifc_element, get_2d_footprint_approx_of_ifc_element
 from api4be.components.utils.georef_utils import transform_local_to_world
 from api4be.components.utils.guid_utils import get_guids
+from api4be import config
+
 
 
 @cache.memoize()
@@ -211,10 +211,12 @@ def _serialize_ifcelements_as_geojson(model, elements, params, georef=None):
     return geojson_feature_collection
 
 
-def geojson_geom_of_element(element, gtype='bbox', georef=None):
+def geojson_geom_of_element(element, gtype=config.DEFAULT_FOOTPRINT_TYPE, georef=None):
     geometry_as_polygon = None
     if gtype == 'footprint':
         geometry_as_polygon = get_2d_footprint_of_ifc_element(element)
+    elif gtype == 'footprint_approx':
+        geometry = get_2d_footprint_approx_of_ifc_element(element)
     else:
         geometry_as_polygon = get_2d_bbox_of_ifc_element(element)
 
@@ -251,7 +253,7 @@ def geojson_feature_of_element(element, guid, params, georef=None):
     return geojson_feature
 
 
-def geojson_geometry_of_composed_element(model, element, gtype='footprint', georef=None, elements_ids=None):
+def geojson_geometry_of_composed_element(model, element, gtype=config.DEFAULT_FOOTPRINT_TYPE, georef=None, elements_ids=None):
     elements_id_with_geometry = elements_ids
     if elements_id_with_geometry is None:
         elements_id_with_geometry = spatial_tree_utils.collect_containing_geometry_elements_ids(element)
@@ -263,6 +265,8 @@ def geojson_geometry_of_composed_element(model, element, gtype='footprint', geor
         geometry = None
         if gtype == 'footprint':
             geometry = geom_utils.get_2d_footprint_of_ifc_elements(model, elements_id_with_geometry)
+        elif gtype == 'footprint_approx':
+            geometry = geom_utils.get_2d_footprint_approx_of_ifc_elements(model, elements_id_with_geometry)
         else:
             geometry = geom_utils.get_2d_bbox_of_ifc_elements(model, elements_id_with_geometry)
 

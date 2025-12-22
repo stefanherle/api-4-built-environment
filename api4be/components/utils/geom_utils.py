@@ -19,8 +19,10 @@ import multiprocessing
 
 import ifcopenshell.geom
 import numpy as np
+from shapely import MultiPoint, Polygon
 from shapely.geometry import box
 from shapely.ops import unary_union
+from ifcopenshell.util.shape import get_bbox_centroid
 
 from api4be.components.utils.logging_utils import print_ifc_element
 
@@ -113,18 +115,9 @@ def get_3d_bbox_from_list_of_vertices(vertices):
     return shapely_points
 
 
-####################################
-# Get 2D shapes of ifc elements
-####################################
-
-def get_2d_bbox_of_ifc_element(element):
-    bbox = get_3d_bbox_of_ifc_element(element)
-    return box(*bbox.bounds)
-
-
-def get_2d_bbox_of_ifc_elements(model, elements):
-    geometries = _use_geom_iterator_on_guids(model, elements, _get_2d_bbox_of_shape)
-    return unary_union(geometries)
+########################################################################
+# Get 2D footprint [bbox, footprint_approx, footprint] of shape
+########################################################################
 
 
 def _get_2d_bbox_of_shape(shape):
@@ -134,18 +127,9 @@ def _get_2d_bbox_of_shape(shape):
     return box(*get_3d_bbox_from_list_of_vertices(grouped_verts).bounds)
 
 
-def get_2d_footprint_of_ifc_element(element):
-    shape = None
-    try:
-        shape = get_shape_object_of_ifc_element(element)
-    except Exception as e:
-        logger.error(e)
-    return _get_2d_footprint_of_shape(shape)
-
-
-def get_2d_footprint_of_ifc_elements(model, elements_ids):
-    geometries = _use_geom_iterator_on_guids(model, elements_ids, _get_2d_footprint_of_shape)
-    return unary_union(geometries)
+def _get_2d_bbox_centroid_of_shape(shape):
+    bbox_centroid = get_bbox_centroid(shape.geometry)
+    return bbox_centroid
 
 
 def _get_2d_footprint_of_shape(shape):
@@ -160,10 +144,52 @@ def _get_2d_footprint_of_shape(shape):
         polygon = Polygon([grouped_2d_verts[face[0]], grouped_2d_verts[face[1]], grouped_2d_verts[face[2]]])
         polygons.append(polygon)
 
-    from shapely.ops import unary_union
     union_of_faces = unary_union(polygons)
 
     return union_of_faces
+
+########################################################################
+# Get 2D footprint [bbox, footprint_approx, footprint] of element(s)
+########################################################################
+
+
+def get_2d_bbox_of_ifc_element(element):
+    bbox = get_3d_bbox_of_ifc_element(element)
+    return box(*bbox.bounds)
+
+
+def get_2d_bbox_of_ifc_elements(model, elements):
+    geometries = _use_geom_iterator_on_guids(model, elements, _get_2d_bbox_of_shape)
+    return unary_union(geometries)
+
+
+def get_2d_footprint_approx_of_ifc_element(element):
+    shape = None
+    try:
+        shape = get_shape_object_of_ifc_element(element)
+    except Exception as e:
+        logger.error(e)
+    return _get_2d_bbox_centroid_of_shape(shape)
+
+
+def get_2d_footprint_approx_of_ifc_elements(model, elements_ids):
+    geometries = _use_geom_iterator_on_guids(model, elements_ids, _get_2d_bbox_centroid_of_shape)
+    mp = MultiPoint(geometries)
+    return mp.convex_hull
+
+
+def get_2d_footprint_of_ifc_element(element):
+    shape = None
+    try:
+        shape = get_shape_object_of_ifc_element(element)
+    except Exception as e:
+        logger.error(e)
+    return _get_2d_footprint_of_shape(shape)
+
+
+def get_2d_footprint_of_ifc_elements(model, elements_ids):
+    geometries = _use_geom_iterator_on_guids(model, elements_ids, _get_2d_footprint_of_shape)
+    return unary_union(geometries)
 
 
 def _use_geom_iterator_on_guids(model, guids, shape_function):

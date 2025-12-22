@@ -28,3 +28,4 @@ REL_URI = os.getenv('REL_URI', False)
 CACHE_TYPE = os.getenv('CACHE_TYPE', 'SimpleCache')
 CACHE_DIR = os.getenv('CACHE_DIR','cache')
 CACHE_DEFAULT_TIMEOUT = int(os.getenv('CACHE_DEFAULT_TIMEOUT', 0))
+DEFAULT_FOOTPRINT_TYPE = os.getenv('DEFAULT_FOOTPRINT_TYPE', 'footprint') # [footprint, footprint_approx, bbox]
